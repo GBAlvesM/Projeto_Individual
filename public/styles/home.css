@@ -9,7 +9,8 @@
 }
 
 
-*, body {
+*,
+body {
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
@@ -26,7 +27,7 @@
 
     font-family: var(--fonte-titulo);
     font-weight: 500;
-    
+
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -97,32 +98,90 @@
 }
 
 .banner {
-    background-color: #1a4881;
-    backdrop-filter: blur(100px);
+    background: url(../assets/padraoteia.svg), url(../assets/textura.png);
+    background-repeat: no-repeat, repeat;
+    background-size: cover, 40%;
+    background-color: rgb(25, 25, 28);
+    background-blend-mode: luminosity, soft-light;
+    background-position: right top;
     height: 385px;
     width: 100%;
 }
 
 .spidey {
-    height: 600px;
-    transform: scaleX(-1) translateY(-60px);
+    height: 550px;
+    transform: scaleX(-1) translateY(-320px);
     filter: drop-shadow(-10px 5px 16px #0000009a);
 }
 
+.milesm {
+    height: 480px;
+    transform: translateY(-780px) translateX(1128px);
+}
+
 .amazing {
-    height: 550px;
-    transform: translateY(-220px) translateX(-150px);
+    height: 800px;
+    transform: translateY(-240px) translateX(-40px);
     filter: drop-shadow(4px 4px #000000);
 }
 
 .conteudo {
     background: url(../assets/padraoteia.svg), url(../assets/textura.png);
     background-repeat: no-repeat, repeat;
-    background-size: cover, 50%;
+    background-size: cover, 40%;
     background-position: top;
     background-color: rgb(175, 36, 36);
-    background-blend-mode: darken;
-    height: 600px;
+    background-blend-mode: darken, soft-light;
+    height: 500px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bemvindo {
+    height: 60%;
+    width: 60%;
+    background-color: rgb(248, 231, 154);
+    border: 4px solid black;
+    box-shadow: 4px 5px black;  
+    padding: 20px;
+    font-family: var(--fonte-corpo);
+    font-size: 1.3rem;
+    text-align: center;
+}
+
+.bemvindo p {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.bemvindo a {
+    text-decoration: none;
+
+    display: inline-block;
+    background-color: #B11313;
+    color: white;
+    box-shadow: 4px 5px black;
+    padding: 10px;
+    transform: skew(-15deg);
+
+    font-size: 1.7rem;
+    font-family: var(--fonte-titulo);
+    transition-duration: 0.3s;
+}
+
+.bemvindo a:hover {
+    background-color: #850e0e;
+    transform: skew(-20deg);
+}
+
+.bemvindo h1 {
+    font-family: var(--fonte-titulo);
+    font-size: 3rem;
+    font-weight: lighter;
+    text-align: center;
+    margin-bottom: 15px;
 }
 
 .quadrinhos {
@@ -194,9 +253,10 @@
     height: 620px;
     background: url(../assets/padraoteia.svg), url(../assets/textura.png);
     background-repeat: no-repeat, repeat;
-    background-size: cover, 50%;
+    background-size: cover, 40%;
     background-position: 0px -900px;
     background-color: rgb(36, 108, 175);
+    background-blend-mode: multiply, soft-light;
 
     display: flex;
     align-items: center;
@@ -222,7 +282,7 @@
     overflow: hidden;
 
     transition-duration: 0.3s;
-    
+
 }
 
 .cards:hover {
@@ -306,9 +366,9 @@
     height: 400px;
     background: url(../assets/padraoteia.svg), url(../assets/textura.png);
     background-repeat: no-repeat, repeat;
-    background-size: cover, 50%;
+    background-size: cover, 40%;
     background-color: rgb(25, 22, 22);
-    background-blend-mode: luminosity;
+    background-blend-mode: luminosity, soft-light;
 
     display: flex;
     align-items: center;
@@ -386,7 +446,7 @@
     color: #B11313;
 }
 
-.rodape h3{
+.rodape h3 {
     font-family: var(--fonte-titulo);
     font-size: 1.6rem;
     font-weight: lighter;
@@ -412,7 +472,7 @@
 }
 
 .rodape span {
-   font-size: 0.7rem; 
-   text-align: center;
-   margin-top: 10px;
+    font-size: 0.7rem;
+    text-align: center;
+    margin-top: 10px;
 }
