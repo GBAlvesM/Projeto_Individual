@@ -18,15 +18,66 @@
                 <p class="ainda">Ainda não tem uma conta? <a href="cadastro.html">Cadastre-se agora</a></p>
                 <div class="inputs">
                     <p>E-mail</p>
-                    <div class="inputicon"><img src="assets/nome.png" alt="" class="icone"><input type="text" id="email" placeholder="Insira seu e-mail" autocomplete="off"></div>
+                    <div class="inputicon"><img src="assets/nome.png" alt="" class="icone"><input type="text" id="ipt_email" placeholder="Insira seu e-mail" autocomplete="off"></div>
                     <p>Senha</p>
                     <div class="inputicon"><img src="assets/senha.png" alt="" class="icone"><input type="password" id="ipt_senha" placeholder="Insira sua senha" autocomplete="off"></div>
                 </div>
-                <button>Login</button>
+                <button onclick="logar()">Login</button>
                 <a href="">Esqueceu sua senha?</a>
                 <a href="index.html" class="voltar">Voltar ao site</a>
             </div>
         </div>
     </div>
 </body>
+<script>
+    function logar() {
+        let email = ipt_email.value
+        let senha = ipt_senha.value
+
+        
+
+        fetch("/usuarios/autenticar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                emailServer: email,
+                senhaServer: senha
+            })
+        }).then(function (resposta) {
+            console.log("ESTOU NO THEN DO entrar()!")
+
+            if (resposta.ok) {
+                console.log(resposta);
+
+                alert('Login feito com sucesso!')
+
+                resposta.json().then(json => {
+                    console.log(json);
+                    console.log(JSON.stringify(json));
+                    sessionStorage.EMAIL_USUARIO = json.email;
+                    sessionStorage.NOME_USUARIO = json.nome;
+                    sessionStorage.ID_USUARIO = json.id;
+
+                    setTimeout(function () {
+                        window.location = "index.html";
+                    }, 1000); // apenas para exibir o loading
+
+                });
+
+            } else {
+
+                console.log("Houve um erro ao tentar realizar o login!");
+
+                alert('Falha no login! Verifique sua senha e e-mail')
+            }
+
+        }).catch(function (erro) {
+            console.log(erro);
+        })
+
+        return false;
+    }
+</script>
 </html>
