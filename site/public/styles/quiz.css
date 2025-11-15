@@ -87,8 +87,8 @@ body {
 }
 
 .box {
-    height: 75%;
-    width: 55%;
+    height: 80%;
+    width: 56%;
     background-color: white;
     border: 4px solid black;
     box-shadow: 6px 7px black;
@@ -101,6 +101,15 @@ body {
     font-size: 1.3rem;
 }
 
+#questaoAt {
+    text-align: center;
+}
+
+#questoes {
+    font-size: 1rem;
+    margin-bottom: 20px;
+}
+
 #informacao {
     font-size: 0.9rem;
     font-weight: 600;
@@ -109,14 +118,14 @@ body {
 
 .logo {
     width: 80px;
-    margin-bottom: 30px;
+    margin-bottom: 5px;
 }
 
 #opcoes {
     margin-top: 15px;
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: 25px;
 }
 
 #opcoes input[type="radio"] {
@@ -127,14 +136,30 @@ body {
     cursor: pointer;
 }
 
+#opcoes label {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    border: 2px solid black;
+    color: black;
+    font-size: 1.1rem;
+    min-width: 300px;
+    text-align: center;
+}
+
+#opcoes option {
+    display: flex;
+    align-items: flex-start;
+}
+
 #linha1 {
     display: flex;
-    gap: 200px;
+    gap: 50px;
 }
 
 #linha2 {
     display: flex;
-    gap: 200px;
+    gap: 50px;
 }
 
 #linha1 span {
