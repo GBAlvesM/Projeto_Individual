@@ -99,6 +99,213 @@
     cursor: pointer;
 }
 
+.conteudo {
+    background: url(../assets/padraoteia.svg), url(../assets/textura.png);
+    background-repeat: no-repeat, repeat;
+    background-size: cover, 40%;
+    background-color: rgb(25, 25, 28);
+    background-blend-mode: luminosity, soft-light;
+    height: fit-content;
+    width: 100%;
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+.selecao {
+    display: flex;
+    flex-direction: column;
+}
+
+.selecao h1 {
+    font-family: var(--fonte-titulo);
+    color: white;
+    text-shadow: 2px 3px black;
+    font-size: 2.6rem;
+    margin-bottom: 20px;
+}
+
+
+.aranhas {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+.cardaranha {
+    height: 230px;
+    width: 230px;
+    border-radius: 50%;
+    background-color: white;
+    opacity: 0.3;
+    transition-duration: 0.3s;
+}
+
+.cardaranha:hover {
+    opacity: 1;
+    cursor: pointer;
+    transform: scale(1.08);
+}
+
+#tobey {
+    background: url("../assets/tobeyfilme.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#andrew {
+    background: url("../assets/andrewfilme.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#tom {
+    background: url("../assets/tomfilme.jpg");
+    background-size: cover;
+    background-position-x: -50px;
+    background-repeat: no-repeat;
+}
+
+#miles {
+    background: url("../assets/milesfilme.jpg");
+    background-size: cover;
+    background-position-x: -70px;
+    background-repeat: no-repeat;
+}
+
+#filmes {
+    margin-top: 100px;
+}
+
+.cardfilme {
+    display: flex;
+    height: 450px;
+    width: 350px;
+    background-color: white;
+    border-radius: 5px;
+}
+
+#f1 {
+    background: url('../assets/sp1tobey.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#f1a {
+    background: url('../assets/sp1and.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#f2a {
+    background: url('../assets/sp2and.jpg');
+    background-size: cover;
+    background-position-y: -40px;
+    background-repeat: no-repeat;
+}
+
+.ftxt {
+    font-family: var(--fonte-corpo);
+    color: rgb(0, 0, 0);
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    
+}
+
+.boxfilme {
+    margin-top: 20px;
+    height: 290px;
+    width: 350px;
+    background-color: rgb(248, 231, 154);
+    border: 4px solid black;
+    box-shadow: 3px 4px black;
+    padding: 15px;
+    font-size: 1.25rem;
+}
+
+.boxfilme h2 {
+    font-family: var(--fonte-titulo);
+    font-weight: lighter;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 1.55rem;
+}
+
+#f2 {
+    background: url('../assets/sp2tobey.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#f3 {
+    background: url('../assets/sp3tobey.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#f1t {
+    background: url('../assets/sp1t.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-y: -90px;
+}
+
+#f2t {
+    background: url('../assets/sp2t.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#f3t {
+    background: url('../assets/sp3t.jpg ');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#f1m {
+    background: url('../assets/sp1m.jpg ');
+    background-position-y: -20px;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#f2m {
+    background: url('../assets/sp2m.jpg ');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#filmestobey {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    gap: 35px;
+}
+
+#filmestom {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    gap: 35px;
+}
+
+#filmesandrew {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    gap: 35px;
+}
+
+#filmesmiles {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    gap: 35px;
+}
 
 .rodape {
     background-color: rgb(12, 12, 12);

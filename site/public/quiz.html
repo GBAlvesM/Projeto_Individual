@@ -14,6 +14,15 @@
         <div id="btnIniciarQuiz"><button onclick="iniciarQuiz()">Iniciar quiz</button></div>
         <div class="box" id="jogo">
             <img src="assets/favicon.png" alt="" class="logo">
+            <div id="resultados">
+                <div id="acertos">
+                    Você acertou <span id="finalAcertos"></span> de <span id="quantQuestoes2"></span> questões
+                </div>
+                <div id="classificacao">
+                    <div id="tituloClassificacao"></div>
+                    <div id="txtClassificacao"></div>
+                </div>
+            </div>
             <div id="questoes">Questão: <span id="questaoA"></span> de <span id="quantQuestoes"></span></div>
             <div id="questaoAt">
                 <span id="txtQuestao"></span>
@@ -220,6 +229,7 @@
         } else if (numeroDaQuestaoAtual == quantidadeDeQuestoes - 1) {
             alert("Atenção... a próxima é a ultima questão!")
             preencherHTMLcomQuestaoAtual(numeroDaQuestaoAtual)
+            btnProx.innerHTML = 'Finalizar quiz'
         } else {
             finalizarJogo()
         }
@@ -281,21 +291,31 @@
     }
 
     function finalizarJogo() {
-        let textoParaMensagemFinal = null
-        let classComCoresParaMensagemFinal = null
         const porcentagemFinalDeAcertos = pontuacaoFinal / quantidadeDeQuestoes
 
-        if (porcentagemFinalDeAcertos <= 0.3) {
-            textoParaMensagemFinal = "Parece que você não estudou..."
-            classComCoresParaMensagemFinal = "textoerrada"
-        }
-        else if (porcentagemFinalDeAcertos > 0.3 && porcentagemFinalDeAcertos < 0.9) {
-            textoParaMensagemFinal = "Pode melhorar na próxima, hein!"
-            classComCoresParaMensagemFinal = "textoerrada"
-        }
-        else if (porcentagemFinalDeAcertos >= 0.9) {
-            textoParaMensagemFinal = "Uau, parabéns!"
-            classComCoresParaMensagemFinal = "textocorreta"
+        questoes.innerHTML = ''
+        questaoAt.innerHTML = ''
+        informacao.innerHTML = ''
+        opcoes.innerHTML = ''
+
+        finalAcertos.innerHTML = pontuacaoFinal
+        quantQuestoes2.innerHTML = quantidadeDeQuestoes
+
+        if (pontuacaoFinal >= 0 && pontuacaoFinal <= 2) {
+            tituloClassificacao.innerHTML = 'Sem Teia'
+            txtClassificacao.innerHTML = 'Conhecimento nível zero. Você não sabe nada do Teioso! É hora de começar a ler os quadrinhos.'
+        } else if (pontuacaoFinal <= 4) {
+            tituloClassificacao.innerHTML = 'Fotógrafo Amador'
+            txtClassificacao.innerHTML = 'Você sabe o nome do herói, mas precisa aprender os inimigos e as regras. Estude um pouco mais!'
+        } else if (pontuacaoFinal <= 6) {
+            tituloClassificacao.innerHTML = 'Vizinho Amigável'
+            txtClassificacao.innerHTML = 'Conhece o básico e os vilões principais. Um bom cidadão, mas precisa de mais dedicação para ser um fã de verdade.'
+        } else if (pontuacaoFinal <= 9) {
+            tituloClassificacao.innerHTML = 'Mestre dos Lançadores'
+            txtClassificacao.innerHTML = 'Seu Sentido Aranha está quase perfeito! Você domina o universo do teioso. Fantástico! Quase lá.'
+        } else {
+            tituloClassificacao.innerHTML = 'O Aranha Supremo'
+            txtClassificacao.innerHTML = 'ESPETACULAR! Seu conhecimento é impecável. Você é o maior fã e o verdadeiro Homem-Aranha! Parabéns!'
         }
 
         btnProx.disabled = true
